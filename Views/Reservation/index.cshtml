@@ -1,0 +1,25 @@
+@model List<Reservation>
+
+<h2>Reservations</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Guests</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var res in Model)
+        {
+            <tr>
+                <td>@res.Name</td>
+                <td>@res.Email</td>
+                <td>@res.ReservationDate.ToShortDateString()</td>
+                <td>@res.Guests</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Reservation/Create" class="btn btn-primary">New Reservation</a>

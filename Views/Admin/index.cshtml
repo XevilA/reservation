@@ -1,0 +1,25 @@
+@model List<Reservation>
+
+<h2>การจองโต๊ะ</h2>
+
+<table border="1">
+    <tr>
+        <th>ชื่อ</th>
+        <th>อีเมล</th>
+        <th>วันที่จอง</th>
+        <th>โต๊ะ</th>
+        <th>ลบ</th>
+    </tr>
+    @foreach (var res in Model)
+    {
+        <tr>
+            <td>@res.Name</td>
+            <td>@res.Email</td>
+            <td>@res.ReservationDate.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>@res.Table?.TableName</td>
+            <td>
+                <a href="@Url.Action("Delete", "Admin", new { id = res.Id })">❌ ลบ</a>
+            </td>
+        </tr>
+    }
+</table>

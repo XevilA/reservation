@@ -1,0 +1,23 @@
+@model Reservation
+
+<h2>จองโต๊ะอาหาร</h2>
+<form method="post" action="@Url.Action("Reserve", "Home")">
+    <label>ชื่อ:</label>
+    <input type="text" name="Name" required />
+
+    <label>อีเมล:</label>
+    <input type="email" name="Email" required />
+
+    <label>วันที่จอง:</label>
+    <input type="datetime-local" name="ReservationDate" required />
+
+    <label>เลือกโต๊ะ:</label>
+    <select name="TableId">
+        @foreach (var table in ViewBag.Tables)
+        {
+            <option value="@table.Id">@table.TableName</option>
+        }
+    </select>
+
+    <button type="submit">จอง</button>
+</form>

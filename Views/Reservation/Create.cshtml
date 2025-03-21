@@ -1,0 +1,22 @@
+@model Reservation
+
+<h2>Create Reservation</h2>
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="Email" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Reservation Date</label>
+        <input type="date" class="form-control" asp-for="ReservationDate" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Guests</label>
+        <input type="number" class="form-control" asp-for="Guests" required>
+    </div>
+    <button type="submit" class="btn btn-success">Book</button>
+</form>
